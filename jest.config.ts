@@ -11,6 +11,14 @@ const config: Config = {
   coverageDirectory: "./coverage",
   testEnvironment: "node",
   roots: ["<rootDir>/src/", "<rootDir>/test/"],
+  coverageThreshold: {
+    global: {
+      branches: 30,
+      functions: 70,
+      lines: 70,
+      statements: -100,
+    },
+  },
 };
 
 export default config;
