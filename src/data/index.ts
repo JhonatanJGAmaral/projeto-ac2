@@ -93,6 +93,5 @@ export class DataBase {
 
     return courseStudents.length >= 0 ? courseStudents[0] : undefined;
   }
-
   // #endregion CourseStudents Queries
 }
