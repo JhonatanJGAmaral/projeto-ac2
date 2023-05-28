@@ -14,8 +14,8 @@ const config: Config = {
   coverageThreshold: {
     global: {
       branches: 30,
-      functions: 70,
-      lines: 70,
+      functions: 71,
+      lines: 71,
       statements: -100,
     },
   },
