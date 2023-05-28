@@ -15,6 +15,7 @@ export const MOCKED_COURSES = [
   new Course("Programção fora da caixa", "Do Caos", 5),
   new Course("Programção dentro da caixa", "Da Paz", 3),
   new Course("Programção norte-americana", "André", 3),
+  new Course("Programção fluída", "Roger", 3),
 ];
 
 export const MOCKED_COURSE = MOCKED_COURSES[9];
