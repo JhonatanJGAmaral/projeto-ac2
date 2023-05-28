@@ -9,3 +9,4 @@ export class CreateUpdateCoursePaylod {
     this.countTests = Number(object?.countTests);
   }
 }
+   

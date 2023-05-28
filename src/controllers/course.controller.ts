@@ -1,7 +1,10 @@
 import { Request, Response, NextFunction } from "express";
 import { DataBase } from "../data";
 import { CourseService } from "../services/course.service";
-import { CreateUpdateCoursePaylod } from "../payloads/Course.payloads";
+import {
+  CreateCourseFactory,
+  UpdateCourseFactory,
+} from "../factory/Course.payloads";
 
 export class CourseController {
   protected service: CourseService;
@@ -26,7 +29,7 @@ export class CourseController {
   public async update(req: Request, res: Response, next: NextFunction) {
     let id: string = req.params.id;
 
-    const payload = new CreateUpdateCoursePaylod(req.body);
+    const payload = new UpdateCourseFactory(req.body);
 
     const response = await this.service.update(id, payload);
 
@@ -41,7 +44,7 @@ export class CourseController {
   }
 
   public async create(req: Request, res: Response, next: NextFunction) {
-    const payload = new CreateUpdateCoursePaylod(req.body);
+    const payload = new CreateCourseFactory(req.body);
 
     const response = await this.service.create(payload);
 
