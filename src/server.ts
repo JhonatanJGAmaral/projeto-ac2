@@ -1,9 +1,12 @@
 import http from "http";
+import cors from "cors";
 import express, { Express } from "express";
 import morgan from "morgan";
 import routes from "./routes";
 
 const router: Express = express();
+
+router.use(cors());
 
 /** Logging */
 router.use(morgan("dev"));
