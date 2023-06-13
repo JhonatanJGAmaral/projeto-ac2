@@ -2,9 +2,9 @@ import { getStudentService } from "./utils";
 import { MOCKED_STUDENT, MOCKED_STUDENTS } from "../../mock/students";
 import { SubscriptionState } from "../../src/models/CursoEstudante.model";
 import {
-  CreateStudentPayload,
-  UpdateStudentPayload,
-} from "../../src/payloads/Student.payloads";
+  CreateStudentFactory,
+  UpdateStudentFactory,
+} from "../../src/factory/Student.payloads";
 
 describe("student", () => {
   describe("getOne", () => {
@@ -48,7 +48,7 @@ describe("student", () => {
     it("Deve retornar os valores esperados ao criar um aluno", async () => {
       const { service } = getStudentService();
 
-      const studentPayload = new CreateStudentPayload({
+      const studentPayload = new CreateStudentFactory({
         name: "Leles",
         subscription: SubscriptionState.PREMIUM,
       });
@@ -67,7 +67,7 @@ describe("student", () => {
     it("Deve retornar erro ao tentar criar aluno sem enviar um nome", async () => {
       const { service } = getStudentService();
 
-      const studentPayload = new CreateStudentPayload({
+      const studentPayload = new CreateStudentFactory({
         name: "",
         subscription: SubscriptionState.PREMIUM,
       });
@@ -83,7 +83,7 @@ describe("student", () => {
     it("Deve adicionar os valores padrão, nos campos opicionais, ao tentar criar um aluno", async () => {
       const { service } = getStudentService();
 
-      const studentPayload = new CreateStudentPayload({
+      const studentPayload = new CreateStudentFactory({
         name: "Andreia THE BOSS",
       });
 
@@ -103,7 +103,7 @@ describe("student", () => {
     it("Deve retornar erro ao tentar atualizar aluno inválido", async () => {
       const { service } = getStudentService();
 
-      const studentPayload = new UpdateStudentPayload({
+      const studentPayload = new UpdateStudentFactory({
         name: "",
         subscription: SubscriptionState.PREMIUM,
       });
@@ -119,7 +119,7 @@ describe("student", () => {
     it("Deve atualizar somente o nome do aluno, quando passado somente ele no payload", async () => {
       const { service } = getStudentService();
 
-      const studentPayload = new UpdateStudentPayload({
+      const studentPayload = new UpdateStudentFactory({
         name: "King Julian",
       });
 
@@ -141,7 +141,7 @@ describe("student", () => {
     it("Deve atualizar somente a inscrição do aluno, quando passado somente ele no payload", async () => {
       const { service } = getStudentService();
 
-      const studentPayload = new UpdateStudentPayload({
+      const studentPayload = new UpdateStudentFactory({
         subscription: SubscriptionState.PREMIUM,
       });
 

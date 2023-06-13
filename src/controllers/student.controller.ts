@@ -46,6 +46,8 @@ export class StudentController {
   }
 
   public async create(req: Request, res: Response, next: NextFunction) {
+    console.log("tentou criar");
+
     const payload = new CreateStudentFactory(req.body);
 
     const response = await this.service.create(payload);
