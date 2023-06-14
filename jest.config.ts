@@ -13,9 +13,9 @@ const config: Config = {
   roots: ["<rootDir>/src/", "<rootDir>/test/"],
   coverageThreshold: {
     global: {
-      branches: 30,
-      functions: 70,
-      lines: 70,
+      branches: 40,
+      functions: 71,
+      lines: 71,
       statements: -100,
     },
   },

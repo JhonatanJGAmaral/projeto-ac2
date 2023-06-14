@@ -1,9 +1,9 @@
 import { DataBase } from "../data";
 import { Student } from "../models/Estudante.model";
 import {
-  CreateStudentPayload,
-  UpdateStudentPayload,
-} from "../payloads/Student.payloads";
+  CreateStudentFactory,
+  UpdateStudentFactory,
+} from "../factory/Student.payloads";
 
 type StudentResponse = {
   data?: Student;
@@ -47,7 +47,7 @@ export class StudentService {
     };
   }
 
-  public async create(payload: CreateStudentPayload): Promise<StudentResponse> {
+  public async create(payload: CreateStudentFactory): Promise<StudentResponse> {
     const studentCreated = new Student(payload?.name, payload?.subscription);
 
     if (!studentCreated.name)
@@ -66,7 +66,7 @@ export class StudentService {
     };
   }
 
-  public async update(studentId: string, payload: UpdateStudentPayload) {
+  public async update(studentId: string, payload: UpdateStudentFactory) {
     let studentUpdated = this.db.getStudentById(studentId);
 
     if (!studentUpdated)

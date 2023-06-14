@@ -24,6 +24,8 @@ export class DataBase {
       (s: Student) => s?.id === payload.id
     );
 
+    if (indexToUpdate < 0) this.students.push(payload);
+
     return (this.students[indexToUpdate] = payload);
   }
 
@@ -54,6 +56,8 @@ export class DataBase {
     const indexToUpdate = this.courses.findIndex(
       (c: Course) => c?.id === payload.id
     );
+
+    if (indexToUpdate < 0) this.courses.push(payload);
 
     return (this.courses[indexToUpdate] = payload);
   }
@@ -93,6 +97,5 @@ export class DataBase {
 
     return courseStudents.length >= 0 ? courseStudents[0] : undefined;
   }
-
   // #endregion CourseStudents Queries
 }
