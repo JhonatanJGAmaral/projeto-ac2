@@ -7,7 +7,7 @@ on:
     branches: ["homol"]
 
 jobs:
-  build:
+  build_homol:
     runs-on: ubuntu-latest
 
     steps:
