@@ -1,5 +1,5 @@
-import { getDatabaseFilled } from "../../mock/database";
-import { StudentService } from "../../src/services/student.service";
+import { getDatabaseFilled } from "../../../mock/database";
+import { StudentService } from "../../../src/services/student.service";
 
 export const getStudentService = () => {
   const { db } = getDatabaseFilled();

@@ -1,7 +1,10 @@
 import array from "../utils/array";
 import { DataBase } from "../data";
 import { Course } from "../models/Curso.model";
-import { CreateUpdateCourseFactory } from "../factory/Course.payloads";
+import {
+  CreateCourseFactory,
+  UpdateCourseFactory,
+} from "../factory/Course.payloads";
 
 type CourseResponse = {
   data?: Course;
@@ -44,9 +47,7 @@ export class CourseService {
     };
   }
 
-  public async create(
-    payload: CreateUpdateCourseFactory
-  ): Promise<CourseResponse> {
+  public async create(payload: CreateCourseFactory): Promise<CourseResponse> {
     const courseCreated = new Course(
       payload?.name,
       payload?.teacher,
@@ -75,7 +76,7 @@ export class CourseService {
     };
   }
 
-  public async update(studentId: string, payload: CreateUpdateCourseFactory) {
+  public async update(studentId: string, payload: UpdateCourseFactory) {
     let courseUpdated = this.db.getCourseById(studentId);
 
     if (!courseUpdated) return { error: true, message: "Curso não encontrado" };
