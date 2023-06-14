@@ -2,14 +2,12 @@ import array from "../utils/array";
 import { Course } from "../models/Curso.model";
 import { removeByIndex } from "../utils/databse";
 import { Student } from "../models/Estudante.model";
-import { TopicoForum } from "../models/TopicoForum.model";
 import { CourseStudent } from "../models/CursoEstudante.model";
 
 export class DataBase {
   public courses: Course[] = [];
   public students: Student[] = [];
   public coursesStudent: CourseStudent[] = [];
-  public readonly topicosForum: TopicoForum[] = [];
 
   // #region Students Queries
 

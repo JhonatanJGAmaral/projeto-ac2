@@ -1,5 +1,5 @@
-import { MOCKED_STUDENTS } from "../../mock/students";
-import { MOCKED_COURSES } from "../../mock/courses";
+import { MOCKED_STUDENTS } from "../../../mock/students";
+import { MOCKED_COURSES } from "../../../mock/courses";
 import { fillUsersCoursesTest } from "./utils";
 
 describe("CourseStudent", () => {

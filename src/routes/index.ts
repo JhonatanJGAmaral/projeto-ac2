@@ -29,4 +29,4 @@ router.delete("/course/:id", (...props) => courseController.delete(...props));
 
 // #endregion Courses routes
 
-export = router;
+export default router;

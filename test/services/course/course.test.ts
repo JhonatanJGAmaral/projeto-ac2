@@ -1,10 +1,10 @@
 import { getCourseService } from "./utils";
-import { SubscriptionState } from "../../src/models/CursoEstudante.model";
-import { MOCKED_COURSE, MOCKED_COURSES } from "../../mock/courses";
+import { SubscriptionState } from "../../../src/models/CursoEstudante.model";
+import { MOCKED_COURSE, MOCKED_COURSES } from "../../../mock/courses";
 import {
   CreateCourseFactory,
   UpdateCourseFactory,
-} from "../../src/factory/Course.payloads";
+} from "../../../src/factory/Course.payloads";
 
 describe("course", () => {
   describe("getOne", () => {
