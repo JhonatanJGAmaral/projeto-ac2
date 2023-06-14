@@ -1,10 +1,10 @@
 import { getStudentService } from "./utils";
-import { MOCKED_STUDENT, MOCKED_STUDENTS } from "../../mock/students";
-import { SubscriptionState } from "../../src/models/CursoEstudante.model";
+import { MOCKED_STUDENT, MOCKED_STUDENTS } from "../../../mock/students";
+import { SubscriptionState } from "../../../src/models/CursoEstudante.model";
 import {
   CreateStudentFactory,
   UpdateStudentFactory,
-} from "../../src/factory/Student.payloads";
+} from "../../../src/factory/Student.payloads";
 
 describe("student", () => {
   describe("getOne", () => {
