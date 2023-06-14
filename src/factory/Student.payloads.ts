@@ -7,7 +7,7 @@ export class CreateStudentFactory {
   public subscription: SubscriptionType = "BASIC";
 
   constructor(object?: CreateStudentDTO) {
-    this.name = String(object?.name);
+    this.name = String(object?.name || "");
     this.subscription = SUBSCRIPTION_TYPE_LIST.includes(
       String(object?.subscription) as SubscriptionType
     )
@@ -21,7 +21,7 @@ export class UpdateStudentFactory {
   public subscription: SubscriptionType | "" = "";
 
   constructor(object?: UpdateStudentDTO) {
-    this.name = String(object?.name);
+    this.name = String(object?.name || "");
     this.subscription = SUBSCRIPTION_TYPE_LIST.includes(
       String(object?.subscription) as SubscriptionType
     )

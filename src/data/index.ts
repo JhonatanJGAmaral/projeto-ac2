@@ -2,14 +2,12 @@ import array from "../utils/array";
 import { Course } from "../models/Curso.model";
 import { removeByIndex } from "../utils/databse";
 import { Student } from "../models/Estudante.model";
-import { TopicoForum } from "../models/TopicoForum.model";
 import { CourseStudent } from "../models/CursoEstudante.model";
 
 export class DataBase {
   public courses: Course[] = [];
   public students: Student[] = [];
   public coursesStudent: CourseStudent[] = [];
-  public readonly topicosForum: TopicoForum[] = [];
 
   // #region Students Queries
 
@@ -23,6 +21,8 @@ export class DataBase {
     const indexToUpdate = this.students.findIndex(
       (s: Student) => s?.id === payload.id
     );
+
+    if (indexToUpdate < 0) this.students.push(payload);
 
     return (this.students[indexToUpdate] = payload);
   }
@@ -54,6 +54,8 @@ export class DataBase {
     const indexToUpdate = this.courses.findIndex(
       (c: Course) => c?.id === payload.id
     );
+
+    if (indexToUpdate < 0) this.courses.push(payload);
 
     return (this.courses[indexToUpdate] = payload);
   }
@@ -93,6 +95,5 @@ export class DataBase {
 
     return courseStudents.length >= 0 ? courseStudents[0] : undefined;
   }
-
   // #endregion CourseStudents Queries
 }
