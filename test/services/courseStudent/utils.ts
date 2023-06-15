@@ -1,7 +1,7 @@
-import { getDatabaseFilled } from "../../mock/database";
-import { MOCKED_COURSE, MOCKED_COURSES } from "../../mock/courses";
-import { MOCKED_STUDENT, MOCKED_STUDENTS } from "../../mock/students";
-import { StudentCourseService } from "../../src/services/courseStudent.service";
+import { getDatabaseFilled } from "../../../mock/database";
+import { MOCKED_COURSE, MOCKED_COURSES } from "../../../mock/courses";
+import { MOCKED_STUDENT, MOCKED_STUDENTS } from "../../../mock/students";
+import { StudentCourseService } from "../../../src/services/courseStudent.service";
 
 export const fillUsersCoursesTest = (grade = 7, student = MOCKED_STUDENT) => {
   const { db } = getDatabaseFilled();
