@@ -54,7 +54,8 @@ export class CourseService {
       payload?.countTests
     );
 
-    if (!courseCreated.countTests) courseCreated.countTests = 1;
+    if (!courseCreated.countTests) 
+        courseCreated.countTests = 1; 
 
     if (!courseCreated.name)
       return { error: true, message: "Nome do curso é inválido" };
